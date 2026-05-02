@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>三段新下駄レイヤー試作</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <main class="app">
+      <section class="workspace" aria-label="入力ワークスペース">
+        <div class="editor-panel">
+          <div class="topbar">
+            <h1>三段新下駄レイヤー試作</h1>
+            <div class="stats" aria-label="入力統計">
+              <span><b id="charCount">0</b> 字</span>
+              <span><b id="strokeCount">0</b> 打鍵</span>
+            </div>
+          </div>
+
+          <textarea id="output" spellcheck="false" autocomplete="off" autocapitalize="off"></textarea>
+
+          <div class="actions">
+            <button id="clearButton" type="button">消去</button>
+            <button id="sampleButton" type="button">例文</button>
+            <button id="copyButton" type="button">コピー</button>
+          </div>
+        </div>
+
+        <aside class="status-panel" aria-label="現在の状態">
+          <div class="layer-readout">
+            <span>Layer</span>
+            <strong id="activeLayer">通常</strong>
+          </div>
+          <div class="current-stroke">
+            <span>Last</span>
+            <strong id="lastStroke">-</strong>
+          </div>
+          <div class="thumb-setting">
+            <span>Aux</span>
+            <strong>Space</strong>
+          </div>
+        </aside>
+      </section>
+
+      <section class="keyboard-area" aria-label="配列">
+        <div class="mode-tabs" role="tablist" aria-label="表示レイヤー">
+          <button class="mode active" type="button" data-mode="base">通常</button>
+          <button class="mode" type="button" data-mode="aux">Aux</button>
+          <button class="mode" type="button" data-mode="k">K</button>
+          <button class="mode" type="button" data-mode="l">L</button>
+          <button class="mode" type="button" data-mode="i">I</button>
+          <button class="mode" type="button" data-mode="o">O</button>
+          <button class="mode" type="button" data-mode="d">D</button>
+          <button class="mode" type="button" data-mode="s">S</button>
+        </div>
+
+        <div id="keyboard" class="keyboard" aria-label="画面キーボード"></div>
+      </section>
+
+      <section class="log-section" aria-label="打鍵ログ">
+        <div class="section-head">
+          <h2>打鍵ログ</h2>
+          <button id="clearLogButton" type="button">ログ消去</button>
+        </div>
+        <ol id="strokeLog" class="stroke-log"></ol>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
